@@ -30,6 +30,6 @@ class GuestBook{
             $data = json_decode($line,true);
             $messages[] = new Message($data['userName'], $data['message'],new DateTime($data['date']));
         }
-        return $messages;
+        return array_reverse($messages);
     }
 }
