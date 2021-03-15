@@ -15,7 +15,7 @@ class Message{
     {
         $data = json_decode($json,true);
         // 'self' équivaut à Message sauf qu'on peut désormais changer le nom de la classe sans avoir de modif à faire ici
-        return new self($data['userName'], $data['message'],new DateTime($data['date']));
+        return new self($data['userName'], $data['message'],new DateTime("@".$data['date']));
     }
 
     // le constructeur prend 3 paramètre, la date peut etre soit nulle soit un objet DateTime
